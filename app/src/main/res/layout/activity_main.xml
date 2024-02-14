@@ -7,19 +7,6 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/nameEt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="34dp"
-        android:ems="10"
-        android:hint="Enter Name"
-        android:inputType="text"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/markEt"
-        app:layout_constraintEnd_toEndOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
-    <EditText
         android:id="@+id/markEt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -31,6 +18,43 @@
         app:layout_constraintBottom_toTopOf="@+id/averageEt"
         app:layout_constraintStart_toStartOf="@+id/nameEt"
         app:layout_constraintTop_toBottomOf="@+id/nameEt" />
+
+    <EditText
+        android:id="@+id/nameEt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="34dp"
+        android:ems="10"
+        android:hint="Enter Name"
+        android:inputType="text"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/markEt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="210dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="38dp"
+        android:text="Coop program completed"
+        app:layout_constraintBottom_toTopOf="@+id/saveBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/averageEt" />
+
+    <Button
+        android:id="@+id/saveBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="101dp"
+        android:onClick="onSaveButtonClick"
+        android:text="Next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 
     <EditText
         android:id="@+id/averageEt"
@@ -45,23 +69,12 @@
         app:layout_constraintStart_toStartOf="@+id/markEt"
         app:layout_constraintTop_toBottomOf="@+id/markEt" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
-        android:layout_width="210dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="38dp"
-        android:text="Coop program completed"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/averageEt" />
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="207dp"
         android:layout_height="0dp"
         android:layout_marginTop="53dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginBottom="137dp"
         android:text="Personal Info"
         android:textAlignment="center"
         android:textSize="24sp"
@@ -71,14 +84,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="228dp"
-        android:text="Next"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox" />
 </androidx.constraintlayout.widget.ConstraintLayout>
