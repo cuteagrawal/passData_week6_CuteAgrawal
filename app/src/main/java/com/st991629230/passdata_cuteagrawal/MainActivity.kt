@@ -6,26 +6,24 @@ import android.os.Bundle
 import android.view.View
 import android.widget.CheckBox
 import android.widget.EditText
+import com.st991629230.passdata_cuteagrawal.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var nameEt: EditText
-    private lateinit var markEt: EditText
-    private lateinit var averageEt: EditText
+    private lateinit var binding: ActivityMainBinding
+
     var checkboxresult = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        // Initialize EditText elements
-        nameEt = findViewById(R.id.nameEt)
-        markEt = findViewById(R.id.markEt)
-        averageEt = findViewById(R.id.averageEt)
-        val checkBox = findViewById<CheckBox>(R.id.checkBox)
-        checkBox.setOnCheckedChangeListener { button, b ->
+    supportActionBar?.setTitle("Cute Agrawal 991629230")
 
-            if(checkBox.isChecked){
+        binding.checkBox.setOnCheckedChangeListener { button, b ->
+
+            if(binding.checkBox.isChecked){
                 checkboxresult = true
             } else{
                 checkboxresult = false
@@ -37,9 +35,13 @@ class MainActivity : AppCompatActivity() {
     fun onSaveButtonClick(view: View) {
 
         // collect data from edit texts
-        val name = nameEt.text.toString()
-        val mark = markEt.text.toString().toInt()
-        val average = averageEt.text.toString().toDouble()
+        val name = binding.nameEt.text.toString()
+        val mark = binding.markEt.text.toString().toInt()
+        val average = binding.averageEt.text.toString().toDouble()
+
+        //age
+        val age = binding.ageEt.text.toString().toInt()
+
 
         //start intent for new Activity and pass the data
         val intent = Intent(this@MainActivity, SecondActivity::class.java)
@@ -47,6 +49,9 @@ class MainActivity : AppCompatActivity() {
         intent.putExtra("Mark", mark)
         intent.putExtra("Average", average)
         intent.putExtra("Coop", checkboxresult)
+
+        //age
+        intent.putExtra("Age", age)
 
         startActivity(intent)
 
